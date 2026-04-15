@@ -1,0 +1,289 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chaapsters - Soya Chaap & Tandoori Delights</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+--primary-teal: #0d9488;
+--dark-teal: #134e4a;
+--light-teal: #f0fdfa;
+--accent-gold: #facc15;
+}
+body {
+font-family: 'Montserrat', sans-serif;
+background-color: var(--light-teal);
+}
+h1, h2, h3, h4 {
+font-family: 'Playfair Display', serif;
+}
+.gradient-bg {
+background: linear-gradient(135deg, var(--dark-teal) 0%, var(--primary-teal) 100%);
+}
+.menu-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1.5rem;
+}
+@media (min-width: 768px) {
+.menu-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.item-row {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+padding: 0.5rem 0;
+border-bottom: 1px dashed rgba(13, 148, 136, 0.2);
+}
+.price-tag {
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+color: var(--dark-teal);
+min-width: 80px;
+text-align: right;
+}
+</style>
+</head>
+<body class="text-slate-800">
+
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-teal-100">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-xl">C</div>
+<h1 class="text-2xl font-bold text-teal-900 tracking-tight">Chaapsters</h1>
+</div>
+<nav class="hidden md:flex gap-8 font-semibold text-teal-800 uppercase text-xs tracking-widest">
+<a href="#home" class="hover:text-teal-500 transition-colors">Home</a>
+<a href="#menu" class="hover:text-teal-500 transition-colors">Full Menu</a>
+<a href="#contact" class="hover:text-teal-500 transition-colors">Contact</a>
+</nav>
+<a href="tel:8955117771" class="bg-teal-700 hover:bg-teal-800 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg transition-all flex items-center gap-2">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 005.47 5.47l.772-1.547a1 1 0 011.06-.539l4.436.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+8955117771
+</a>
+</div>
+</header>
+
+<!-- Hero -->
+<section id="home" class="pt-32 pb-20 px-6 flex flex-col items-center text-center">
+<div class="max-w-4xl mx-auto">
+<span class="text-teal-600 font-bold tracking-[0.3em] uppercase mb-4 block">The Ultimate Soya Experience</span>
+<h2 class="text-5xl md:text-7xl font-bold text-teal-950 mb-6">Grilling Greatness <br><span class="italic text-teal-600">Every Single Day.</span></h2>
+
+<div id="hero-image-container" class="relative w-full max-w-4xl aspect-[21/9] mt-12 rounded-3xl overflow-hidden shadow-2xl bg-teal-100 flex items-center justify-center group">
+<div id="hero-placeholder" class="text-teal-500 flex flex-col items-center gap-4">
+<button id="gen-hero-btn" class="bg-white text-teal-700 font-bold px-8 py-4 rounded-xl hover:bg-teal-50 transition-all border-2 border-teal-200 shadow-xl">
+View Sizzling Specials
+</button>
+</div>
+<img id="hero-image" class="hidden w-full h-full object-cover" alt="Chaapster Platter">
+<div id="image-loader" class="hidden absolute inset-0 flex flex-col items-center justify-center bg-white/95 z-10">
+<div class="w-12 h-12 border-4 border-teal-600 border-t-transparent rounded-full animate-spin"></div>
+<p class="mt-4 text-teal-800 font-bold italic">Firing up the tandoor...</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Full Menu Section -->
+<section id="menu" class="py-20 bg-white px-6">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl md:text-6xl font-bold text-teal-950 mb-4">Our Full Menu</h2>
+<p class="text-teal-600 font-medium italic">Hand-crafted marinades, clay-oven roasted.</p>
+</div>
+
+<!-- TIKKA ITEMS -->
+<div class="mb-20">
+<div class="flex items-center gap-6 mb-10">
+<h3 class="text-3xl font-bold text-teal-800 whitespace-nowrap">Paneer Tikka Selection</h3>
+<div class="h-px bg-teal-100 w-full"></div>
+</div>
+<div class="menu-grid">
+<div class="item-row"><span>Masala Paneer Tikka</span><span class="price-tag">₹160 / 220</span></div>
+<div class="item-row"><span>Afghani Paneer Tikka</span><span class="price-tag">₹160 / 220</span></div>
+<div class="item-row"><span>Malai Paneer Tikka</span><span class="price-tag">₹170 / 230</span></div>
+<div class="item-row"><span>Haryali Paneer Tikka</span><span class="price-tag">₹160 / 230</span></div>
+<div class="item-row"><span>Achari Paneer Tikka 🔥</span><span class="price-tag">₹160 / 230</span></div>
+<div class="item-row"><span>Peri-Peri Paneer Tikka</span><span class="price-tag">₹170 / 230</span></div>
+<div class="item-row"><span>Tandoori Paneer Tikka</span><span class="price-tag">₹170 / 230</span></div>
+<div class="item-row"><span>Chilly Garlic Paneer Tikka</span><span class="price-tag">₹170 / 230</span></div>
+<div class="item-row"><span>Rajasthani Paneer Tikka</span><span class="price-tag">₹180 / 240</span></div>
+<div class="item-row"><span class="font-bold text-teal-700 italic">Chaapster's Special Tikka</span><span class="price-tag">₹180 / 240</span></div>
+</div>
+</div>
+
+<!-- CHAAP ITEMS -->
+<div class="mb-20">
+<div class="flex items-center gap-6 mb-10">
+<h3 class="text-3xl font-bold text-teal-800 whitespace-nowrap">Dry Roasted Soya Chaap</h3>
+<div class="h-px bg-teal-100 w-full"></div>
+</div>
+<div class="menu-grid">
+<div class="item-row"><span>Masala Chaap</span><span class="price-tag">₹150 / 210</span></div>
+<div class="item-row"><span>Afghani Chaap</span><span class="price-tag">₹150 / 210</span></div>
+<div class="item-row"><span>Malai Chaap (Best Seller)</span><span class="price-tag">₹150 / 220</span></div>
+<div class="item-row"><span>Masala Malai Chaap</span><span class="price-tag">₹160 / 220</span></div>
+<div class="item-row"><span>Peri-Peri Chaap 🔥</span><span class="price-tag">₹160 / 220</span></div>
+<div class="item-row"><span>Tandoori Chaap</span><span class="price-tag">₹150 / 220</span></div>
+<div class="item-row"><span>Haryali Chaap</span><span class="price-tag">₹150 / 220</span></div>
+<div class="item-row"><span>Garlic Chaap</span><span class="price-tag">₹160 / 220</span></div>
+<div class="item-row"><span>Achari Chaap</span><span class="price-tag">₹160 / 220</span></div>
+<div class="item-row"><span>Lemon Chaap</span><span class="price-tag">₹160 / 220</span></div>
+<div class="item-row"><span>Rajasthani Chaap</span><span class="price-tag">₹170 / 220</span></div>
+<div class="item-row"><span class="font-bold text-teal-700 italic">Chaapster's Signature Chaap</span><span class="price-tag">₹180 / 240</span></div>
+</div>
+</div>
+
+<!-- GRAVY & BREADS -->
+<div class="grid md:grid-cols-2 gap-16">
+<div>
+<div class="flex items-center gap-6 mb-8">
+<h3 class="text-2xl font-bold text-teal-800">Rich Gravies</h3>
+<div class="h-px bg-teal-100 w-full"></div>
+</div>
+<div class="space-y-4">
+<div class="item-row"><span>Punjabi Masala Chaap</span><span class="price-tag">₹180 / 270</span></div>
+<div class="item-row"><span>Butter Masala Chaap</span><span class="price-tag">₹180 / 270</span></div>
+<div class="item-row"><span>Veg Changezi Masala</span><span class="price-tag">₹180 / 270</span></div>
+<div class="item-row"><span>Paneer Butter Masala</span><span class="price-tag">₹160 / 270</span></div>
+<div class="item-row"><span>Tawa Paneer</span><span class="price-tag">₹170 / 260</span></div>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-6 mb-8">
+<h3 class="text-2xl font-bold text-teal-800">Breads & Rolls</h3>
+<div class="h-px bg-teal-100 w-full"></div>
+</div>
+<div class="space-y-4">
+<div class="item-row"><span>Paneer Tikka Roll</span><span class="price-tag">₹150</span></div>
+<div class="item-row"><span>Signature Chaap Roll</span><span class="price-tag">₹140</span></div>
+<div class="item-row"><span>Rumali Roti / Butter</span><span class="price-tag">₹15 / 20</span></div>
+<div class="item-row"><span>Tandoori Roti / Butter</span><span class="price-tag">₹15 / 20</span></div>
+<div class="item-row"><span>Garlic Naan</span><span class="price-tag">₹50</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-24 gradient-bg text-white px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+<div class="md:w-1/2">
+<h2 class="text-4xl md:text-5xl font-bold mb-8">Ready to Feast?</h2>
+<div class="space-y-6">
+<div class="flex items-center gap-6 bg-white/10 p-6 rounded-2xl backdrop-blur-md">
+<div class="w-14 h-14 bg-yellow-400 text-teal-900 rounded-full flex items-center justify-center text-2xl">
+<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 005.47 5.47l.772-1.547a1 1 0 011.06-.539l4.436.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+</div>
+<div>
+<p class="text-sm uppercase tracking-widest opacity-70">Order / Delivery</p>
+<a href="tel:8955117771" class="text-3xl font-bold hover:text-yellow-400 transition-colors">8955117771</a>
+</div>
+</div>
+<div class="flex items-center gap-6 bg-white/10 p-6 rounded-2xl backdrop-blur-md">
+<div class="w-14 h-14 bg-white text-teal-900 rounded-full flex items-center justify-center text-2xl">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+</div>
+<div>
+<p class="text-sm uppercase tracking-widest opacity-70">Location</p>
+<p class="text-xl font-semibold leading-tight">Queens Road, Vidyut Nagar B,<br>Vaishali Nagar, Jaipur</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 w-full">
+<div class="bg-white rounded-3xl p-8 text-teal-900 shadow-2xl">
+<h3 class="text-2xl font-bold mb-6">Opening Hours</h3>
+<div class="space-y-3 border-t border-teal-50 pt-6">
+<div class="flex justify-between"><span>Monday - Sunday</span><span class="font-bold">12:00 PM - 11:00 PM</span></div>
+<div class="flex justify-between"><span>Home Delivery</span><span class="font-bold">Available</span></div>
+<div class="flex justify-between"><span>Party Orders</span><span class="font-bold">Accepted</span></div>
+</div>
+<div class="mt-8">
+<a href="tel:8955117771" class="block text-center gradient-bg text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all shadow-lg">
+Call to Place Order
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="py-12 bg-slate-950 text-white text-center">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="text-3xl font-bold mb-2">Chaapsters</h2>
+<p class="text-slate-500 italic mb-8 uppercase tracking-widest text-xs">Premium Vegetarian Tandoori Experience</p>
+<p class="text-slate-600 text-sm">© 2026 Chaapsters India. All Rights Reserved.</p>
+</div>
+</footer>
+
+<script>
+const apiKey = ""; // Runtime Injection
+
+async function generateFoodVisual(prompt, elementId, btnId) {
+const loader = document.getElementById('image-loader');
+const placeholder = document.getElementById('hero-placeholder');
+const imgElement = document.getElementById(elementId);
+const btn = document.getElementById(btnId);
+
+loader.classList.remove('hidden');
+if (btn) btn.disabled = true;
+
+const url = `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${apiKey}`;
+
+const payload = {
+instances: [{
+prompt: `Professional cinematic food photography of ${prompt}. A gourmet spread of tandoori soya chaap and paneer tikka on a rustic dark teal slate platter. Garnished with mint leaves, lemon slices, and red onion rings. Steam rising, glowing charcoal embers in background, soft morning light, 8k resolution, appetizing texture.`
+}],
+parameters: { sampleCount: 1 }
+};
+
+let retryCount = 0;
+while (retryCount < 5) {
+try {
+const response = await fetch(url, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify(payload)
+});
+
+if (!response.ok) throw new Error();
+
+const result = await response.json();
+const b64 = result.predictions[0].bytesBase64Encoded;
+
+imgElement.src = `data:image/png;base64,${b64}`;
+imgElement.classList.remove('hidden');
+placeholder.classList.add('hidden');
+loader.classList.add('hidden');
+return;
+
+} catch (e) {
+retryCount++;
+await new Promise(r => setTimeout(r, Math.pow(2, retryCount) * 1000));
+}
+}
+loader.classList.add('hidden');
+if (btn) btn.disabled = false;
+}
+
+window.onload = () => {
+document.getElementById('gen-hero-btn').addEventListener('click', () => {
+generateFoodVisual("Malai Soya Chaap and Haryali Paneer Tikka served on a platter", "hero-image", "gen-hero-btn");
+});
+};
+</script>
+</body>
+</html>
+
+```
