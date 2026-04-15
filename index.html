@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chaapsters - A place for delicious chapatis and more.">
+    <meta name="keywords" content="chaap, restaurant, Jaipur, food, testimonials, PWA">
+    <meta name="author" content="Chaapsters">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Chaapsters - Delicious Chapatis</title>
+    <style>
+        /* Optimized CSS with variables */
+        :root {
+            --primary-color: #ff6347;
+            --secondary-color: #fff;
+            --font-family: 'Arial', sans-serif;
+        }
+        body {
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 1rem;
+        }
+        .testimonial {
+            transition: all 0.3s ease;
+        }
+        .testimonial:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Chaapsters</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" aria-labelledby="home-label">
+            <h2 id="home-label">Our Delicious Chapatis</h2>
+            <img src="image.jpg" alt="Delicious chapatis" loading="lazy">
+            <p>We serve the best chapatis in Jaipur. Come and enjoy!</p>
+        </section>
+        <section id="menu" aria-labelledby="menu-label">
+            <h2 id="menu-label">Menu</h2>
+            <!-- Better menu organization with categories -->
+            <h3>Categories</h3>
+            <ul>
+                <li><a href="#main-course">Main Course</a></li>
+                <li><a href="#sides">Sides</a></li>
+            </ul>
+            <h3>Main Course</h3>
+            <p>Details about main course options...</p>
+        </section>
+        <section id="testimonials" aria-labelledby="testimonials-label">
+            <h2 id="testimonials-label">What Our Customers Say</h2>
+            <div class="testimonial">
+                <p>"Best chapatis ever! - Customer A"</p>
+            </div>
+            <div class="testimonial">
+                <p>"Amazing food and service! - Customer B"</p>
+            </div>
+        </section>
+        <section id="contact" aria-labelledby="contact-label">
+            <h2 id="contact-label">Contact Us</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Chaapsters. Follow us on social media!</p>
+        <ul>
+            <li><a href="https://facebook.com/Chaapsters">Facebook</a></li>
+            <li><a href="https://twitter.com/Chaapsters">Twitter</a></li>
+            <li><a href="https://instagram.com/Chaapsters">Instagram</a></li>
+        </ul>
+    </footer>
+    <script>
+        // API call with error handling
+        async function fetchData() {
+            try {
+                const response = await fetch('api/endpoint');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                console.log(data);
+            } catch (error) {
+                console.error('There was a problem with the fetch operation:', error);
+            }
+        }
+        fetchData();
+    </script>
+</body>
+</html>
